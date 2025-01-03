@@ -2,6 +2,7 @@ package morbey.springframework.springaiintro.controllers;
 
 import morbey.springframework.springaiintro.model.Answer;
 import morbey.springframework.springaiintro.model.GetCapitalRequest;
+import morbey.springframework.springaiintro.model.GetCapitalResponse;
 import morbey.springframework.springaiintro.model.Question;
 import morbey.springframework.springaiintro.services.OpenAIService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +18,18 @@ public class QuestionController {
         this.openAiService = openAiService;
     }
 
-    @GetMapping("/ask")
-    public Answer askQuestion(@RequestBody Question question) {
-        return openAiService.getAnswer(question);
+    @GetMapping("/capitalWithInfo")
+    public Answer getCapitalWithInfo(@RequestBody GetCapitalRequest getCapitalRequest) {
+        return openAiService.getCapitalWithInfo(getCapitalRequest);
     }
 
     @GetMapping("/capital")
-    public Answer getCapital(@RequestBody GetCapitalRequest getCapitalRequest) {
+    public GetCapitalResponse getCapital(@RequestBody GetCapitalRequest getCapitalRequest) {
         return openAiService.getCapital(getCapitalRequest);
+    }
+
+    @GetMapping("/ask")
+    public Answer askQuestion(@RequestBody Question question) {
+        return openAiService.getAnswer(question);
     }
 }

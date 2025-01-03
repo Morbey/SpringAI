@@ -1,0 +1,10 @@
+What is the capital of {stateOrCountry}? Respond with the following format:
+            The capital of '''stateOrCountry''' is '''capital'''
+            The city has a population of '''population'''
+            The is located at '''location'''
+            The primary language spoken is '''language'''
+            The currency used is '''currency'''
+            The country has a population of '''countryPopulation'''
+            The country is located in '''countryLocation'''
+            The country has a GDP of '''gdp'''
+            The country has a GDP per capita of '''gdpPerCapita'''
